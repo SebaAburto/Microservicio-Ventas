@@ -1,6 +1,6 @@
 package com.inventario.inventario.repository;
 
-import com.Microservicio-Inventario.cl.Microservicio-Inventario.Tipo_talla;
+import com.venta.venta.model.Tipo_talla;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

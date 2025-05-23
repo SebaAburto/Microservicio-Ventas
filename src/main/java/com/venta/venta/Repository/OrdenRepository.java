@@ -1,6 +1,6 @@
 package com.ventas.ventas.repository;
 
-import com.Microservicio-Ventas.cl.Microservicio-Ventas.Orden;
+import com.venta.venta.model.Orden;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

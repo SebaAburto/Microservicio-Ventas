@@ -1,6 +1,6 @@
 package com.carrito.carrito.repository;
 
-import com.Microservicio-Carrito.cl.Microservicio-Carrito.Tipo_estado;
+import com.venta.venta.model.Tipo_estado;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
