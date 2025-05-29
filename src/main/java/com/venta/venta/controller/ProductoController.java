@@ -26,44 +26,46 @@ public class ProductoController {
 
     @PostMapping
     public ResponseEntity<Producto> guardar(@RequestBody Producto producto) {
-        Producto productoNuevo = productoService.save(producto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(productoNuevo);
+        Producto nuevoProducto = productoService.save(producto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoProducto);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscar(@PathVariable Long id) {
-        try {
-            Producto producto = productoService.findById(id);
-            return ResponseEntity.ok(producto);
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
+    try {
+        Producto producto = productoService.findById(id);
+        return ResponseEntity.ok(producto);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
     }
+}
 
     @PutMapping("/{id}")
     public ResponseEntity<Producto> actualizar(@PathVariable Long id, @RequestBody Producto producto) {
-        try {
-            Producto prodExistente = productoService.findById(id);
-            prodExistente.setNombre(producto.getNombre());
-            prodExistente.setDescripcion(producto.getDescripcion());
-            prodExistente.setPrecio(producto.getPrecio());
+    try {
+        Producto productoExistente = productoService.findById(id);
+        productoExistente.setNombre(producto.getNombre());
+        productoExistente.setDescripcion(producto.getDescripcion());
+        productoExistente.setPrecio(producto.getPrecio());
+        productoExistente.setCategoria(producto.getCategoria());
+        productoExistente.setColor(producto.getColor());
+        productoExistente.setFecha_creacion(producto.getFecha_creacion());
 
-
-            productoService.save(prodExistente);
-            return ResponseEntity.ok(prodExistente);
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
+        productoService.save(productoExistente);
+        return ResponseEntity.ok(productoExistente);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Long id) {
-        try {
-            productoService.delete(id);
-            return ResponseEntity.noContent().build();
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
+    try {
+        productoService.delete(id);
+        return ResponseEntity.noContent().build();
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
     }
 }
 

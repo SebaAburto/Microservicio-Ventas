@@ -26,7 +26,39 @@ public class Tipo_estadoController {
 
     @PostMapping
     public ResponseEntity<Tipo_estado> guardar(@RequestBody Tipo_estado tipo_estado) {
-        Tipo_estado nuevo = tipo_estadoService.save(tipo_estado);
-        return ResponseEntity.status(HttpStatus.CREATED).body(nuevo);
+        Tipo_estado nuevoEstado = tipo_estadoService.save(tipo_estado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevoEstado);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Tipo_estado> buscar(@PathVariable Long id) {
+    try {
+        Tipo_estado estado = tipo_estadoService.findById(id);
+        return ResponseEntity.ok(estado);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
+
+    @PutMapping("/{id}")
+        public ResponseEntity<Tipo_estado> actualizar(@PathVariable Long id, @RequestBody Tipo_estado tipo_estado) {
+    try {
+        Tipo_estado estadoExistente = tipo_estadoService.findById(id);
+        estadoExistente.setTipo_estado_id(tipo_estado.getTipo_estado_id());
+        tipo_estadoService.save(estadoExistente);
+        return ResponseEntity.ok(estadoExistente);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
+    try {
+        tipo_estadoService.delete(id);
+        return ResponseEntity.noContent().build();
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
     }
 }

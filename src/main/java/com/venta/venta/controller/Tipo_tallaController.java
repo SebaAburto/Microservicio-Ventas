@@ -26,7 +26,39 @@ public class Tipo_tallaController {
 
     @PostMapping
     public ResponseEntity<Tipo_talla> guardar(@RequestBody Tipo_talla tipo_talla) {
-        Tipo_talla nueva = tipo_tallaService.save(tipo_talla);
-        return ResponseEntity.status(HttpStatus.CREATED).body(nueva);
+        Tipo_talla nuevaTalla = tipo_tallaService.save(tipo_talla);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nuevaTalla);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Tipo_talla> buscar(@PathVariable Long id) {
+    try {
+        Tipo_talla talla = tipo_tallaService.findById(id);
+        return ResponseEntity.ok(talla);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Tipo_talla> actualizar(@PathVariable Long id, @RequestBody Tipo_talla tipo_talla) {
+    try {
+        Tipo_talla tallaExistente = tipo_tallaService.findById(id);
+        tallaExistente.setTipo_talla_id(tipo_talla.getTipo_talla_id());
+        tipo_tallaService.save(tallaExistente);
+        return ResponseEntity.ok(tallaExistente);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
+    try {
+        tipo_tallaService.delete(id);
+        return ResponseEntity.noContent().build();
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
     }
 }
