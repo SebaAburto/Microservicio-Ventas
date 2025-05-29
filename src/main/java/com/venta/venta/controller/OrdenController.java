@@ -29,4 +29,39 @@ public class OrdenController {
         Orden nueva = ordenService.save(orden);
         return ResponseEntity.status(HttpStatus.CREATED).body(nueva);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Orden> buscar(@PathVariable Long id) {
+    try {
+        Orden orden = ordenService.findById(id);
+        return ResponseEntity.ok(orden);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Orden> actualizar(@PathVariable Long id, @RequestBody Orden orden) {
+    try {
+        Orden existente = ordenService.findById(id);
+        existente.setFecha_creacion(orden.getFecha_creacion());
+        existente.setUsuario(orden.getUsuario());
+        existente.setCarrito(orden.getCarrito());
+
+        ordenService.save(existente);
+        return ResponseEntity.ok(existente);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
+    try {
+        ordenService.delete(id);
+        return ResponseEntity.noContent().build();
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
 }

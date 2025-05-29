@@ -29,4 +29,37 @@ public class PagoController {
         Pago nuevo = pagoService.save(pago);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevo);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Pago> buscar(@PathVariable Long id) {
+    try {
+        Pago pago = pagoService.findById(id);
+        return ResponseEntity.ok(pago);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Pago> actualizar(@PathVariable Long id, @RequestBody Pago pago) {
+    try {
+        Pago existente = pagoService.findById(id);
+        existente.setEstado_pago(pago.getEstado_pago());
+
+        pagoService.save(existente);
+        return ResponseEntity.ok(existente);
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
+    try {
+        pagoService.delete(id);
+        return ResponseEntity.noContent().build();
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+    }
 }
