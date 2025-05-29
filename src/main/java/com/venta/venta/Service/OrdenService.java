@@ -1,7 +1,7 @@
-package com.venta.venta.service;
+package com.venta.venta.Service;
 
 import com.venta.venta.model.Orden;
-import com.venta.venta.repository.OrdenRepository;
+import com.venta.venta.Repository.OrdenRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

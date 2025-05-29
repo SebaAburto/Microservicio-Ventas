@@ -1,7 +1,7 @@
-package com.venta.venta.service;
+package com.venta.venta.Service;
 
 import com.venta.venta.model.Pago;
-import com.venta.venta.repository.PagoRepository;
+import com.venta.venta.Repository.PagoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

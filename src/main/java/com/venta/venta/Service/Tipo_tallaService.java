@@ -1,7 +1,7 @@
-package com.venta.venta.service;
+package com.venta.venta.Service;
 
 import com.venta.venta.model.Tipo_talla;
-import com.venta.venta.repository.Tipo_tallaRepository;
+import com.venta.venta.Repository.Tipo_tallaRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

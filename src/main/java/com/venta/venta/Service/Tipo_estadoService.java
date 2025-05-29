@@ -1,7 +1,7 @@
-package com.venta.venta.service;
+package com.venta.venta.Service;
 
 import com.venta.venta.model.Tipo_estado;
-import com.venta.venta.repository.Tipo_estadoRepository;
+import com.venta.venta.Repository.Tipo_estadoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
