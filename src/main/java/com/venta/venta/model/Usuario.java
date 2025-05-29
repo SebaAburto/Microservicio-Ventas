@@ -1,4 +1,4 @@
-package com.carrito.carrito.model;
+package com.venta.venta.model;
 
 import java.util.Date;
 

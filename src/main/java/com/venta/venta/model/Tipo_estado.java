@@ -1,4 +1,4 @@
-package com.carrito.carrito.model;
+package com.venta.venta.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,5 +30,3 @@ public class Tipo_estado {
     private String descripcion; //activo, abandonado, finalizado
 
 }
-
-//

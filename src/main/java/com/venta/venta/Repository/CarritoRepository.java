@@ -1,4 +1,4 @@
-package com.carrito.carrito.repository;
+package com.venta.venta.repository;
 
 import com.venta.venta.model.Carrito;
 import org.springframework.data.jpa.repository.JpaRepository;
