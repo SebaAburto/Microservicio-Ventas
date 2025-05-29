@@ -1,4 +1,4 @@
-package com.carrito.carrito.repository;
+package com.venta.venta.Repository;
 
 import com.venta.venta.model.Tipo_estado;
 import org.springframework.data.jpa.repository.JpaRepository;

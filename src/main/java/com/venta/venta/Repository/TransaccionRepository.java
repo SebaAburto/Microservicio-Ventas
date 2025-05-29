@@ -1,4 +1,4 @@
-package com.ventas.ventas.repository;
+package com.venta.venta.Repository;
 
 import com.venta.venta.model.Transaccion;
 import org.springframework.data.jpa.repository.JpaRepository;
