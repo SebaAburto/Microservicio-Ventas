@@ -1,7 +1,7 @@
 package com.venta.venta.controller;
 
 import com.venta.venta.model.Tipo_talla;
-import com.venta.venta.service.Tipo_tallaService;
+import com.venta.venta.Service.Tipo_tallaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;

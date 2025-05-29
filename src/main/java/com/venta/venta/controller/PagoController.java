@@ -1,7 +1,7 @@
 package com.venta.venta.controller;
 
 import com.venta.venta.model.Pago;
-import com.venta.venta.service.PagoService;
+import com.venta.venta.Service.PagoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;

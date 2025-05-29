@@ -1,7 +1,7 @@
 package com.venta.venta.controller;
 
 import com.venta.venta.model.Producto;
-import com.venta.venta.service.ProductoService;
+import com.venta.venta.Service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;

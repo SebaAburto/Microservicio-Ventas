@@ -1,7 +1,7 @@
 package com.venta.venta.controller;
 
 import com.venta.venta.model.Carrito;
-import com.venta.venta.service.CarritoService;
+import com.venta.venta.Service.CarritoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -29,4 +29,6 @@ public class CarritoController {
         Carrito nuevo = carritoService.save(carrito);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevo);
     }
+
+    
 }
