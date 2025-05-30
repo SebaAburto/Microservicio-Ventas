@@ -55,5 +55,9 @@ public class Carrito {
         inverseJoinColumns = @JoinColumn(name = "producto_id")
     )
     private List<Producto> productos;
+
+    @ManyToOne
+    @JoinColumn(name = "orden_id")
+    private Orden orden;
 }
 
