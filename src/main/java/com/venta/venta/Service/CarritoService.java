@@ -1,6 +1,9 @@
 package com.venta.venta.Service;
 
 import com.venta.venta.model.Carrito;
+import com.venta.venta.model.Producto;
+import com.venta.venta.model.Tipo_estado;
+import com.venta.venta.model.Usuario;
 import com.venta.venta.Repository.CarritoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

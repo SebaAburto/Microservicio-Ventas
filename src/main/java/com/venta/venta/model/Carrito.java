@@ -44,9 +44,6 @@ public class Carrito {
     private Tipo_estado tipo_estado;
 
     @ManyToOne
-    private Producto productos;
-
-    @ManyToOne
-    private Orden orden;
+    private Producto producto;
 
 }

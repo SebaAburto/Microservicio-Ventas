@@ -1,6 +1,7 @@
 package com.venta.venta.Service;
 
 import com.venta.venta.model.Producto;
+import com.venta.venta.model.Tipo_talla;
 import com.venta.venta.Repository.ProductoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

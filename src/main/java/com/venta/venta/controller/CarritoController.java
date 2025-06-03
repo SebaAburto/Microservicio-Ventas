@@ -48,7 +48,7 @@ public class CarritoController {
             carritoExistente.setFecha_modificacion(carrito.getFecha_modificacion());
             carritoExistente.setUsuario(carrito.getUsuario());
             carritoExistente.setTipo_estado(carrito.getTipo_estado());
-            carritoExistente.setProductos(carrito.getProductos());
+            carritoExistente.setProducto(carrito.getProducto());
 
             carritoService.save(carritoExistente);
             return ResponseEntity.ok(carritoExistente);
