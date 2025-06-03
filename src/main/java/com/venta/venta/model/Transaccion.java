@@ -1,8 +1,6 @@
 package com.venta.venta.model;
 
 import java.util.Date;
-
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,13 +12,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Entity
 @Table(name="Transaccion")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 
 public class Transaccion {
 

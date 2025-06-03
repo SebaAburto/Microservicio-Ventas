@@ -10,15 +10,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
-
 @Entity
 @Table(name="Tipo_talla")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 
 public class Tipo_talla {
 
