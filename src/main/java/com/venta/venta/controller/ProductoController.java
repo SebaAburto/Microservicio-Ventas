@@ -50,6 +50,7 @@ public class ProductoController {
         productoExistente.setCategoria(producto.getCategoria());
         productoExistente.setColor(producto.getColor());
         productoExistente.setFecha_creacion(producto.getFecha_creacion());
+        productoExistente.setTipo_talla(producto.getTipo_talla());
 
         productoService.save(productoExistente);
         return ResponseEntity.ok(productoExistente);
