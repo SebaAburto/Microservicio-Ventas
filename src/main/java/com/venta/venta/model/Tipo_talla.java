@@ -22,7 +22,7 @@ public class Tipo_talla {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer tipo_talla_id;
 
-    @Column(nullable = false, length=10)
+    @Column(nullable = false, length=50)
     private String descripcion;
 
 }

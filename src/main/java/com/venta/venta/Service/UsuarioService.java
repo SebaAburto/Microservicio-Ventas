@@ -19,15 +19,24 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public Usuario findById(Long id) {
-        return usuarioRepository.findById(id).get();
+    public Usuario findById(Integer id) throws Exception {
+        return usuarioRepository.findById(id)
+                .orElseThrow(() -> new Exception("Usuario no encontrado con id: " + id));
     }
 
     public Usuario save(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
 
-    public void delete(Long id) {
+    public void delete(Integer id) throws Exception {
+        if (!usuarioRepository.existsById(id)) {
+            throw new Exception("Usuario no encontrado con id: " + id);
+        }
         usuarioRepository.deleteById(id);
     }
+
+    public List<Usuario> buscarPorRun(String run) {
+        return usuarioRepository.findByRun(run);
+    }
+
 }

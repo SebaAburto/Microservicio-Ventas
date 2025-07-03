@@ -1,6 +1,7 @@
 package com.venta.venta.Service;
 
 import com.venta.venta.model.Pago;
+import com.venta.venta.model.Producto;
 import com.venta.venta.model.Orden;
 import com.venta.venta.Repository.PagoRepository;
 import jakarta.transaction.Transactional;
@@ -30,5 +31,17 @@ public class PagoService {
 
     public void delete(Long id) {
         pagoRepository.deleteById(id);
+    }
+    
+    public List<Pago> listar() {
+        return pagoRepository.findAll();
+    }
+
+    public List<Pago> buscarPorMetodoPago(String metodoPago) {
+        return pagoRepository.buscarPorMetodoPago(metodoPago);
+    }
+
+    public List<Pago> buscarPorEstadoPago(String estadoPago) {
+        return pagoRepository.buscarPorEstadoPago(estadoPago);
     }
 }

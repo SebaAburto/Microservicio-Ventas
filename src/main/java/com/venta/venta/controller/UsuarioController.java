@@ -31,7 +31,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario> buscar(@PathVariable Long id) {  
+    public ResponseEntity<Usuario> buscar(@PathVariable Integer id) {  
     try {
         Usuario usuario = usuarioService.findById(id);
         return ResponseEntity.ok(usuario);
@@ -41,7 +41,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Usuario> actualizar(@PathVariable Long id, @RequestBody Usuario usuario) {
+    public ResponseEntity<Usuario> actualizar(@PathVariable Integer id, @RequestBody Usuario usuario) {
     try {
         Usuario usuarioExistente = usuarioService.findById(id);
         usuarioExistente.setCorreo(usuario.getCorreo());
@@ -54,7 +54,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable Long id) {
+    public ResponseEntity<?> eliminar(@PathVariable Integer id) {
     try {
         usuarioService.delete(id);
         return ResponseEntity.noContent().build();
